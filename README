@@ -1,0 +1,45 @@
+ 
+RSA Encryption & Decryption Application
+A streamlined web application built with Streamlit for demonstrating RSA encryption and decryption algorithms.
+Overview
+This application provides an intuitive interface for encrypting and decrypting messages using the RSA (Rivest-Shamir-Adleman) cryptographic algorithm. The system consists of two integrated modules that work seamlessly together through session state management.
+RSA Algorithm
+RSA is an asymmetric cryptographic algorithm that uses a pair of keys for encryption and decryption:
+Key Generation Process
+
+Prime Selection: Two distinct prime numbers (p and q) are randomly generated
+Modulus Calculation: Compute n = p × q, which forms part of both public and private keys
+Euler's Totient: Calculate φ(n) = (p-1) × (q-1)
+Public Exponent: Select e such that 1 < e < φ(n) and gcd(e, φ(n)) = 1
+Private Exponent: Compute d as the modular multiplicative inverse of e mod ulo φ(n)
+
+Encryption
+For a message M, the ciphertext C is computed as:
+C = M^e mod n
+Decryption
+The original message M is recovered from ciphertext C using:
+M = C^d mod n
+Security Foundation
+The security of RSA relies on the computational difficulty of factoring the product of two large prime numbers. While it is straightforward to multiply p and q to obtain n, deriving p and q from n alone is computationally infeasible for sufficiently large primes.
+Features
+
+Automated Key Generation: Dynamically generates RSA key pairs with configurable bit length
+Seamless Integration: Encrypted data automatically transfers between encryption and decryption modules
+Session State Management: Eliminates manual copy-pasting of keys and ciphertext
+User-Friendly Interface: Clean, intuitive design with clear visual feedback
+Error Handling: Comprehensive validation and error messages
+
+To run the code you will need the following libraries:
+1) Streamlit
+To download it run the code
+    pip install streamlit
+2) sympy
+To download it run the code
+    pip install sympy
+
+
+How to use my code:
+1) First open Terminal
+2) Navigate to the location of the file using the 'cd' command.
+3) Then run the command "streamlit run Encryption.py"
+4) Repeat the step 3 for Decryption as well.
