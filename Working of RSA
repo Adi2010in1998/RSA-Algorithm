@@ -1,1 +1,24 @@
 This is how it all works:
+RSA is an asymmetric cryptographic algorithm that uses a pair of keys for encryption and decryption:
+
+First the program selects 2 Prime Numbers(P,Q)
+
+Then it calculates the product(P*Q)(N)
+
+It calculates the Totient(P-1)*(Q-1)(T)
+
+Then it selects a public key(E). This public key must:
+1. be Prime
+2. be Less than the Totient
+3. NOT be a factor of the Totient
+
+Then it selects a private key(D). This private key must:
+1. (D*E)MOD(T) = 1
+
+To encrypt a piece of information, following the algorithm it uses:
+Text^E * MOD(N) = Cipher Text
+
+To decrpyt a piece of information, following the algortihm it uses:
+Cipher Text^D * MOD(N) = Text
+
+The program converts the entered text into ASCII numerical values. After this are all the ASCII Values. 
